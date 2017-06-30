@@ -1,0 +1,13 @@
+﻿# initialize
+git init
+git remote add origin <url>
+
+# commit and push
+git add <file> # enter . to add all files
+git commit -m "comment"
+git push -u origin master # first push
+git push # after first push
+
+# clone and pull
+git clone <url> <directory>
+git pull

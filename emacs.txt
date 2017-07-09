@@ -1,0 +1,46 @@
+[cursor moving]
+C-a:head of line
+C-e:end of line
+C-v:next screen
+M-v:previous screen
+M->:end of file
+M-<:head of file
+M-x goto-line:go to line
+C-l:move cursor to the center
+C-u C-Space: return cursor to the last position
+
+[basic operations]
+C-g:quit operation
+C-x u:undo
+C-x C-c:exit emacs
+
+[file operations]
+C-x C-w:save as
+C-x C-s:save
+C-x C-f:open
+
+[window operations]
+C-x 2:separate vertically
+C-x 3:separate horisontally
+C-x 0:delete window
+C-x o:move cursor
+
+[buffer operation]
+C-x b:change buffer
+C-x C-b:view buffers
+C-x k:delete
+
+[delete]
+C-d
+
+[cut,copy,paste]
+C-k:cut from cursor to end of line
+C-[Space]:set mark
+M-w:copy from mark to cursor
+C-w:cut from mark to cursor
+C-y:paste
+
+[search,substitute]
+C-s:seach forward
+C-r:search backward
+M-%:substitute

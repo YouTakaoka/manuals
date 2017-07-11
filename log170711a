@@ -2,3 +2,8 @@
 1. modify /etc/default/grub as follows:
      GRUB_CMDLINE_LINUX_DEFAULT="systemd.unit=multi-user.target quiet nosplash"
 2. type update-grub2
+
+
+start X window system:
+(startx didn't work)
+sudo service lightdm restart

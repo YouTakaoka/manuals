@@ -1,0 +1,20 @@
+﻿keymap settings.
+
+1. sudo dumpkeys | sudo tee -a defkeymap.map
+2. sudo cp defkeymap.map mykeymap.map
+3. add following lines to the end of mykeymap.map
+
+# Zenkaku Hankaku -> Esc
+keycode 41 = Escape
+# Tab       -> Shift
+keycode 15 = Shift
+# Caps Lock -> Ctrl
+keycode 58 = Control
+# Shift_L   -> Alt
+keycode 42 = Alt
+# Alt       -> Caps Lock
+keycode 56 = Caps_Lock
+# Muhenkan  -> Tab
+keycode 94 = Tab
+
+4. sudo loadkeys mykeymap.map

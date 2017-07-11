@@ -1,5 +1,6 @@
 ﻿keymap settings.
 
+0. cd /usr/share/keymaps/
 1. sudo dumpkeys | sudo tee -a defkeymap.map
 2. sudo cp defkeymap.map mykeymap.map
 3. add following lines to the end of mykeymap.map
@@ -18,3 +19,5 @@ keycode 56 = Caps_Lock
 keycode 94 = Tab
 
 4. sudo loadkeys mykeymap.map
+5. add the following to /etc/rc.local
+loadkeys /usr/share/keymaps/mykeymap.map

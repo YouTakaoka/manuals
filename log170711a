@@ -6,4 +6,11 @@
 
 start X window system:
 (startx didn't work)
+
+1. install lightdm and greeter
+sudo apt install lightdm loghtdm-gtk-greeter
+
+2. start lightdm
+sudo service lightdm start
+or
 sudo service lightdm restart

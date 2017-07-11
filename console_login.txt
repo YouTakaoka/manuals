@@ -12,5 +12,8 @@ sudo apt install lightdm lightdm-gtk-greeter
 
 2. start lightdm
 sudo service lightdm start
-or
-sudo service lightdm restart
+
+
+switch to console from X: Ctrl+Alt+<f{1...6}>
+switch to another console: Alt+<f{1...6}>
+switch to X: Alt+<f7>

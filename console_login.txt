@@ -1,0 +1,16 @@
+﻿boot by text mode:
+1. modify /etc/default/grub as follows:
+     GRUB_CMDLINE_LINUX_DEFAULT="systemd.unit=multi-user.target quiet nosplash"
+2. type update-grub2
+
+
+start X window system:
+(startx didn't work)
+
+1. install lightdm and greeter
+sudo apt install lightdm lightdm-gtk-greeter
+
+2. start lightdm
+sudo service lightdm start
+or
+sudo service lightdm restart

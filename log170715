@@ -1,0 +1,10 @@
+﻿I tried to fix the keymap problem after start X, but finally I couldn't.
+
+I tried:
+-install fcitx-config-gtk
+-reinstall fcitx
+-change input method to ibus
+-add "fcitx -r" to .xsession and others
+-add "xmodmap $HOME/.Xmodmap" to .xinputrc
+-delete /etc/default/keyboard
+  -> Caps Lock started working

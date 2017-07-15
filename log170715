@@ -8,3 +8,17 @@ I tried:
 -add "xmodmap $HOME/.Xmodmap" to .xinputrc
 -delete /etc/default/keyboard
   -> Caps Lock started working
+
+
+test: added echo line to the following files:
+      .xprofile(read)
+      .xsessionrc(read)
+      .xinputrc(read)
+      .xsession(not read)
+      .xinitrc(not read)
+  then the first 3 files were read.
+
+test2: made the 3 files output stderr to file:
+  -> got no error message.
+
+conclusion: 3 files are read, and the xmodmap command is executed, but the keymap setting is changed by something.

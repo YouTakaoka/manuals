@@ -11,6 +11,7 @@
    sudo touch framebuffer.rules
    (add following:) KERNEL=="fb0",  OWNER="username", MODE="0640"
 4. chmod u+s /usr/bin/fbterm
-5. run fbterm
+5. restart OS
+6. run fbterm
 
 (NOTE: tmux can run on fbterm.)

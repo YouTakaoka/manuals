@@ -5,9 +5,12 @@
 2. fbterm settings. add following lines to .fbtermrc:
    font-names=Ume Gothic
    font-size=16
-3. sudo fbterm
-(tmux can run on fbterm.)
+3. create custom udev rule to set permission when framebuffer device is created
+   sudo mkdir -p /etc/udev/my-rules.d
+   cd /etc/udev/my-rules.d
+   sudo touch framebuffer.rules
+   (add following:) KERNEL=="fb0",  OWNER="username", MODE="0640"
+4. chmod u+s /usr/bin/fbterm
+5. run fbterm
 
-**NOTICE**
-chmod u+s fbterm and using that command without sudo leads to CRUSH.
-NEVER DO THIS!!
+(NOTE: tmux can run on fbterm.)

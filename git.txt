@@ -10,4 +10,4 @@ git push # after first push
 
 # clone and pull
 git clone <url> <directory>
-git pull
+git pull origin master

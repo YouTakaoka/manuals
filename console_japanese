@@ -6,6 +6,7 @@
    font-names=Ume Gothic
    font-size=16
 3. sudo fbterm
+(tmux can run on fbterm.)
 
 **NOTICE**
 chmod u+s fbterm and using that command without sudo leads to CRUSH.

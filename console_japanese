@@ -1,0 +1,12 @@
+﻿How to view japanese text in console mode.
+
+1. install fbterm and ume-font.
+   sudo apt install fbterm fonts-horai-umefont
+2. fbterm settings. add following lines to .fbtermrc:
+   font-names=Ume Gothic
+   font-size=16
+3. sudo fbterm
+
+**NOTICE**
+chmod u+s fbterm and using that command without sudo leads to CRUSH.
+NEVER DO THIS!!

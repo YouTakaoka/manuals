@@ -1,0 +1,7 @@
+﻿The following problems fixed.
+    1. cannot launch fcitx automatically when login
+    2. .Xmodmap settings don't be reflected when login
+(if I launch fcitx manually from GUI, the settings get reflected)
+
+Solution:
+        From GUI, right click the menu of fcitx, and choose "start when I login."

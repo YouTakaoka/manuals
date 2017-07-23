@@ -18,3 +18,5 @@ switch to console from X: Ctrl+Alt+<f{1...6}>
 switch to another console: Alt+<f{1...6}>
 switch to X: Alt+<f7>
 (note: when you using Inspiron, press <Fn> key togeter with <f*>)
+
+show battery remainder energy: acpi -bi

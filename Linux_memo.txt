@@ -1,0 +1,115 @@
+[mintインストール時のBIOS設定]※おそらくUbuntuも同じ？
+・UEFIモード
+・Secure Boot:Enabled
+
+[ショートカット]
+・端末Ctrl+Alt+T
+・Ctrl+z:中断
+・Ctrl+c:強制終了
+
+[端末内ショートカット]
+・Ctrl+w:左の1word削除
+・Ctrl+Shift+C:Copy
+・Ctrl+Shift+V:Paste
+・Ctrl+s:画面ロック
+・Ctrl+q:ロック解除
+
+[コマンドライン操作]
+・Ctrl+b：左一文字移動
+・Ctrl+f：右一文字移動
+・Ctrl+a：行頭移動
+・Ctrl+e：行末移動
+・Alt+b：左一単語移動
+・Alt+f：右一単語移動
+
+・Ctrl+h：左一文字削除
+・Ctrl+d：カーソル上一文字削除
+・Ctrl+w：左一単語カット
+・Ctrl+u：左全カット
+・Ctrl+k：右全カット（カーソル上含む）
+・Ctrl+y:ヤンク
+
+[コマンド]
+・cd:ディレクトリ移動
+・ls：ディレクトリ内のファイル表示 (option -1:一行にひとつ -lh:詳細+ファイルサイズ -A:ドットファイル表示 --color:カラー表示 -F:ディレクトリとか区別 -R:サブディレクトリを表示)
+・rm:削除(-i:確認 -R:ディレクトリ削除)
+・sudo:指定したユーザーでコマンドを実行（デフォルト->root）
+・sudo passwd root:rootパスワードの設定
+・su -:rootユーザーになる
+・setxkbmap jp:キー配列を日本語に
+・vi:vi起動
+・cp [コピー元のファイル名] [コピー後のファイル名]:ファイルのコピー
+・man:コマンドのマニュアル表示
+・which:コマンドの場所表示　　
+・chmod [対象+操作+モード] [ファイル名]:ファイルパーミッションの変更(r:read 2^2, w:write 2^1, x:exert 2^0)(u:owner, g:group, o:others)
+(例)
+#fileを誰でも書き込み可能にする：chmod a+w file
+#file -> owner=rwx, group=r-x, others=r--: chmod 754 file
+・exit:端末終了
+・clear:端末の内容をクリア
+・grep:ファイル内検索
+・cat:ファイルの内容表示
+・wc:ファイルサイズ表示
+・cal [month] [year]:カレンダー表示
+・nkf [option] [file]:文字コード変換 to 標準出力(option -g:show char code, -s:Shift-JIS, -w:UTF-8, -e:EUC)
+・alias [別名＝'コマンド']
+ ***注意*** bash設定ファイル.bashrc書き込まないとログオフ時にリセットされる!!
+ [>unalias:エイリアス解除
+ [>コマンド名の前に"\"を付けると一時的にエイリアス無効に
+・du:ディレクトリの容量表示(-c:合計を含めて表示 -s:合計だけ表示 -h:見やすい単位で表示 )
+・df -h:ファイルシステムの使用量表示
+・ln -s <target file name>:create a simbolic link to the target file in current directory.
+・type:コマンドのタイプを調べる
+・tar [option] [file name]:書庫の展開・圧縮・解凍(option -f:specify archive file name, -z:.gz-format, -x:expand archive, -c:create archive file, -t:show filenames in archive)
+[注]***展開は展開先ディレクトリに移動してから実行！！***
+[注]***展開時に-kオプション指定しないと、既存のフォルダに上書きされるので注意！！！（展開下後の名前は書庫名ではなく、元のフォルダの名前になる）***
+(例)
+#展開 cd expdir; tar -xzf ../archive.tar.gz
+#圧縮 tar -czf archive.tar.gz file1 file2 ...
+・sed [option] <script> <file>:文字列の処理(script s/old/new/g:文字列oldをnewで全置換)
+[>区切り文字には任意の記号が使える(s直後のものを自動認識)
+(例1)file内の"abc"を"def"に全置換して標準出力 sed 's/abc/def/g' file
+(例2)path内の"/"より左側をすべて削除 echo "path" | sed 's,.*/,,g'
+[>後方参照 \(…\)でグループ化、$1で参照
+(例3)例2で、最後の"文字列/"は消さないver(abc/def/ -> def/)
+	echo "path" | sed 's,.*/\(..*\),\1,g'
+・sudo pm-suspend:サスペンド
+・sudo pm-hibernate:ハイバーネート
+・service mysql status：MySQL起動確認
+・service mysql start：MySQL起動
+・service mysql stop：MySQL停止
+・service mysql restart：MySQL再起動
+
+[正規表現]
+*:0回以上の繰り返し
++:1回以上の繰り返し
+^:行頭
+$:行末
+.:任意の一文字
+.*:任意の文字列
+[]:[]内の任意の一文字
+
+[自作コマンド]
+・mktxt [filename]:Create a new (text) file and open it by gedit.
+・eztar [archive(.tar.gz)] [new directory name (may be omitted)]:Make a new directory and expand .tar.gz archive file easily and safely in it.
+
+[viコマンド]
+・:set nocompatible 互換モード切る（方向キーがABCDになったときの対処）
+・/[検索文字列] 検索
+・i インサートモード（現在のカーソル位置に入力）
+・A 行末挿入
+・Esc コマンドモードに戻る
+・u 元に戻す
+・:w 保存
+・:q vi終了
+・p:paste
+・x:一文字削除
+・dd:行をカット
+・J:行の連結
+>viの設定ファイルは~/.exrc (これはユーザごとに設定が必要！無ければ作る！)
+
+[注意]
+・Mozcはrootでは使用できない！Anthyを入れること！(それでも無理ならviでいける)
+・テキストファイルが文字化けするときはgeditで開けばおK！
+・bashの設定ファイル.bashrc
+・lnコマンドはリンクファイルをつくるディレクトリで実行しないとうまくいかない（謎）

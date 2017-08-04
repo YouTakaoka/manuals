@@ -11,3 +11,16 @@ git push # after first push
 # clone and pull
 git clone <url> <directory>
 git pull origin master
+
+# download single file from GitHub
+click "RAW" button
+
+# create branch
+git branch <branch>
+
+# change branch
+git checkout <branch>
+
+# clone/pull branch
+git clone -b <branch> ...
+git pull -b <branch> ...

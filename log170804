@@ -1,0 +1,47 @@
+[issue1].tmux.conf
+tmux installed to mac, via brew.
+I got error messages like:
+
+/Users/kevin/.tmux.conf:25: invalid or unknown command: bind-key -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
+/Users/kevin/.tmux.conf:26: invalid or unknown command: bind-key -t vi-copy v begin-selection
+/Users/kevin/.tmux.conf:30: invalid or unknown command: bind-key -t vi-copy Y copy-end-of-line
+/Users/kevin/.tmux.conf:31: invalid or unknown command: bind-key -t vi-copy V rectangle-toggle
+/Users/kevin/.tmux.conf:32: invalid or unknown command: bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
+/Users/kevin/.tmux.conf.2:3: invalid or unknown command: bind-key -t vi-copy PPage page-up
+/Users/kevin/.tmux.conf.2:4: invalid or unknown command: bind-key -t vi-copy NPage page-down
+
+
+I had to rewrite .tmux.conf in the newer way:
+1. replace -t with -T
+2. replace vi-<name> with <name>-mode-vi
+3. prefix the command with send-keys -X
+
+For example:
+
+bind-key -t vi-copy v begin-selection
+
+becomes
+
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+
+This worked.
+
+[issue2]buiid source code on Xcode
+build failed.
+I changed the git branch to lv3, then build successed.
+
+
+[issue3]couldn't start tmux, brew from zsh
+I installed zsh.
+Chanhed login shell by chsh command.
+After that, I could'nt start tmux and brew.
+I added their path to $PATH:
+
+export "PATH=$PATH:/usr/local/bin"
+
+Then it worked.
+
+
+[issue4]emacs package management
+I used el-get. It was so easy to setup.
+see http://qiita.com/yoshikyoto/items/3f5de63648febe897bee

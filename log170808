@@ -1,0 +1,11 @@
+[note1]
+in PathPlan source codes,
+  Polygon_ -> smart pointer of Polygon.
+
+@see PolygonUtil.hpp:
+	typedef std::vector<Point2D> Polygon;
+	typedef boost::shared_ptr<Polygon> Polygon_;
+	typedef std::vector<Polygon_> Polygons;
+	typedef boost::shared_ptr<Polygons> Polygons_;
+
+-smart pointer: pointer which will be discarded when it becomes useless.

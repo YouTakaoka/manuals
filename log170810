@@ -1,0 +1,5 @@
+[mac]changed keybind settings in mac.
+1. Karabiner didnt work.
+  I used Karabiner-elements. It worked.
+2. Choose JIS keyboard in the setting of Karabiner-elements.
+3. There is a preference item to use option key as meta key in terminal.app.

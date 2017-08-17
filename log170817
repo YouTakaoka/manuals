@@ -13,3 +13,7 @@ Found the answer in stack overflow:
 4. Error: "Undefined method CI_Controller::CI_Controller()."
 In PHP5, constructor must be written as
   CI_Controller::__construct()
+
+5. Error: mysqli::real_connect(): (HY000/2002): No such file or directory
+'hostname' => 'localhost'
+-> 'hostname' => '127.0.0.1'

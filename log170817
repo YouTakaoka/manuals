@@ -1,0 +1,11 @@
+[mac]
+1. Brew couldn't link MySQL
+Changed the directory permission. Successed.
+
+2. Execute MySQL statement from text file
+mysql> source file_name
+
+3. Using CodeIgniter, got the error: "Class 'Controller' not found."
+Found the answer in stack overflow:
+   In CodeIgniter 2 your controllers inherit from super class CI_Controller, rather than the super class Controller used in CodeIgniter 1.
+   The same applies to models in CI2 which extend the class CI_Model rather then Model.

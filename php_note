@@ -1,0 +1,8 @@
+@self vs. this
+self: reffers static members
+this: reffers current object
+
+usage:
+self::member_name
+$this->member_name
+function_name($this)

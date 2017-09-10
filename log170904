@@ -1,0 +1,9 @@
+[eclim installation on mac]
+eclipse home dir:
+  export ECLIPSE_HOME=/Applications/Eclipse.app/Contents/Eclipse/
+
+[start&stop eclimd]
+start:
+  $ECLIPSE_HOME/eclimd
+stop:
+  $ECLIPSE_HOME/eclim -command shutdown

@@ -1,0 +1,4 @@
+[mac]
+1. Couldn't copy dot files(hidden files)
+Type: shopt -s dotglob
+(Couldn't use in zsh. Use bash.)

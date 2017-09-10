@@ -1,0 +1,20 @@
+[couldn't run java program on eclim]
+error message:
+  java.lang.RuntimeException: Required setting 'org.eclim.java.run.mainclass' has not been set.
+
+solution:
+
+1. Teach eclim name of Main class (class contains main() method)
+  Save the file, run :ProjectSettings command which will open the mentioned file and set:
+    org.eclim.java.run.mainclass=Main
+  Don't forget to save that one too. Now you should normally run :Java
+
+2. Write main() method properly. Don't omit the argument:
+  public static void main(String[] args){...
+
+error message2:
+  Can't find Main class or load it.
+
+solution:
+  Recreate the project.
+

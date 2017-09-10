@@ -1,0 +1,7 @@
+[emacs-eclim]
+I tried to setup emacs-eclim, but I couldn't.
+I installed eamcs-eclim, but it couldn't be loaded from init.el.
+
+[tmux settiings]
+In newer version of tmux, "copy-pipe" command should be "copy-pipe-and-cancel."
+

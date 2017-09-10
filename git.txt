@@ -24,3 +24,12 @@ git checkout <branch>
 # clone/pull branch
 git clone -b <branch> ...
 git pull -b <branch> ...
+
+################ GitHub #########################
+# abbreviate entering username when git push
+In .git/config, add "username@" to the url.
+
+.git/config:
+  [remote "origin"]
+  url = https://github.com/username/repository.git
+->url = https://username@github.com/username/repository.git

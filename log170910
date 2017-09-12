@@ -1,0 +1,9 @@
+@ Failed to install eclim on Linux Mint.
+Got build error.
+Both of using installer and building from source didn't work.
+
+@ JDEE install successed on Linux Mint.
+Installed according to this page:
+  https://github.com/jdee-emacs/jdee
+
+**caution**: malabar mode has gotten old.

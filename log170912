@@ -1,0 +1,5 @@
+1. Tried to install JDEE on mac
+- memoize couldn't install by using el-get.
+  I installed it from source.
+    -- wget from github, and added require statement in my init.el
+- auto syntax check didn't work.

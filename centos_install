@@ -1,0 +1,58 @@
+[Installing CentOS6.9 on mac mini]
+# See
+https://access.redhat.com/documentation/ja-JP/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s2-diskpartrecommend-x86.html
+
+# Hint
+- Recommend that you use  more than two USB flash disks.
+  One for CentOS disk image, and another for GRUB install disk or Ubuntu liveUSB.
+
+- You may become not able to boot CentOS.
+  Then, try installing GRUB2 form USB install disk.
+
+- CentOS liveUSB may not work. Ubuntu one is much safer.
+
+# Downloading iso image
+minimal_x86_64
+
+# Burn into USB flash disk
+format: exFAT
+
+# Partition HDD
+root: 5GB, FAT32[MS-DOS(FAT)]
+boot: 250MB, FAT32[MS-DOS(FAT)]
+efi : 512MB, FAT32[MS-DOS(FAT)]
+
+# Installing
+## Choose disk drive
+- hard drive
+  -> sda1
+
+## Partitioning
+- Custom latout
+   root: /         ext4
+   boot: /boot     ext4
+   ESP : /boot/efi vfat
+
+- warning: no swap -> OK
+- warning: using GPT bootdisk on a non-EFI filesystem -> OK
+
+# Trouble shooting
+## What sould I do when I see GRUB prompt?
+If it's GRUB2, follwing enables you to boot OS.
+1. Find the boot partition.
+   You can see the content of parition by typing:
+       ls (hd0,*)/
+       (* is partition number)
+    [If you cannot read it, reinstall rEFIt.]
+2. set root=(ad0,*)
+   (* is the partition number of the boot partition)
+3. linux /vml... root=(dev/sda@)
+   [You can complete ... part by press TAB key.]
+   [@ is the partition number of system root, which does not have to coinside with that of boot partition.]
+4. initrd /init... (TAB completion)
+5. boot
+
+## Cannot run yum
+1. edit /etc/sysconfig/network-scipts/ifcfg-eth0
+     ONBOOT=no -> yes
+2. reboot

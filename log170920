@@ -1,0 +1,14 @@
+Installed apache and tomcat on centos6(local).
+
+[Cannot access controllers of CodeIgniter]
+.htaccess had not been enabled.
+Edit httpd.conf file as:
+  AllowOverride None
+                  -> All
+
+[Tomcat doesn't work]
+- Try curl command:
+	curl localhost:8080
+- Something's gone wrong with w3m. Do not use it.
+- Alternative: lynx
+

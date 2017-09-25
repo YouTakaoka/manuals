@@ -1,0 +1,11 @@
+- built emacs25 from source
+- installed maven
+- installed JDEE
+
+[cannot access tomcat directories]
+Add tomcat group youreself.
+  # usermod -G tomcat takaoka-y
+*NOTE*: You cannot do this when you login as your account. Logout once and login as root to do this.
+
+[compile servlet]
+javac -classpath $CATALINA_HOME/lib/servlet-api.jar Servlet.java

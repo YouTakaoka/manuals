@@ -4,7 +4,7 @@
 
 [cannot access tomcat directories]
 Add tomcat group youreself.
-  # usermod -G tomcat takaoka-y
+  # usermod -aG tomcat takaoka-y
 *NOTE*: You cannot do this when you login as your account. Logout once and login as root to do this.
 
 [compile servlet]

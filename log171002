@@ -1,6 +1,7 @@
 [Installed X window system]
 sudo yum groupinstall "X Window System" "Desktop" "Desktop Platform" "General Purpose Desktop"
 init 5
+(Note: X works on tty1 in the case of CentOS6)
 
 [Installed Chromium]
 cd /etc/yum.repos.d

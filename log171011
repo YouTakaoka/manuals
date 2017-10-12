@@ -1,0 +1,7 @@
+[Deleted my home directory by mistake (OMG!)]
+1. Somehow an directory named "~" created
+2. I tried to delete it, and typed:
+     rm -Rf ~
+3. Tragedy
+
+I must have escaped the "~". I was an idiot.

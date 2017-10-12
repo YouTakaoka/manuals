@@ -33,3 +33,8 @@ In .git/config, add "username@" to the url.
   [remote "origin"]
   url = https://github.com/username/repository.git
 ->url = https://username@github.com/username/repository.git
+
+################ trouble shooting ###############
+[git -> Gtk-WARNING cannot open display]
+unset SSH_ASKPASS
+

@@ -1,0 +1,6 @@
+[brew]
+Not work on tmux.
+
+[emacs error: Symbol's function definition is void: locate-user-emacs-file]
+1. Re-install emacs.
+2. Restart shell and emacs.

@@ -1,0 +1,14 @@
+[.htaccess]
+In order to enable .htaccess, one needs to modify /etc/apache2/apache2.conf:
+   <Directory /var/www/>
+           Options Indexes FollowSymLinks
+           AllowOverride None
+           Require all granted
+   </Directory>
+
+For example, if you want to limit access,
+           AllowOverride None    
+                         -> Limit
+
+Do not forget to restart httpd:
+   sudo apachectl restart

@@ -1,0 +1,41 @@
+[Installing Gentoo on Laptop (dual boot with Linux Mint)]
+
+<Download iso image>
+I chose livedvd-amd64-multilib-20160704.iso
+(Minimal CD doesn't work for UEFI system)
+
+<Verify signatures>
+In this page:
+  https://www.gentoo.org/downloads/signatures/
+one can find three public keys.
+The last one hit.
+If you're not sure, you can try all the keys.
+
+<Write iso image to USB strage device>
+1. Unmount UBS strage device.
+2. sudo dd if=livedvd-amd64-multilib-20160704.iso of=/dev/sdb bs=512k
+
+<Boot Gentoo Linux from USB strage device>
+If you see the messege:
+  "secure boot violation" "invalid signature detected"
+
+- Disable secure boot
+- Choose USB device from legacy options
+
+<Configure network>
+1. Use ifconfig command to find network interface.
+[In the case of wired network, its name is usually "eth0".
+In the case of wireless network, it usually starts from "wl", such as "wlp1s0".]
+2. Configure the interface (in this case, wlp1s0) by using ifconfig and route command:
+  ifconfig eth0 ${IP_ADDR} broadcast ${BROADCAST} netmask ${NETMASK} up
+  route add default gw ${GATEWAY}
+In this case, the following parameters are used:
+  ip: 192.168.100.5
+  net mask: 255.255.255.0
+  broadcast:192.168.100.255
+  gateway: 192.168.100.1
+3. edit /etc/resolv.conf:
+  nameserver ${NAMESERVER1}
+ I used the address of gateway(192.168.100.1) as the nameserver address.
+4. If not yet connected, connect from GUI.
+

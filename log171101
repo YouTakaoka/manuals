@@ -10,3 +10,7 @@ https://wiki.archlinux.jp/index.php/WPA_supplicant#wpa_cli_.E3.81.A7.E6.8E.A5.E7
 When failed to connect network by wpa_cli, type: 
   killall wpa_supplicant
 and try again. It worked.
+
+- Mount the filesystem
+Somehow gentoo doesn't identify HDD!
+

@@ -1,0 +1,12 @@
+[Installing Arch Linux on Inspiron]
+Almost succeeded doing along with the document, but couldn't install grub.
+  error message: "EFI variables are not supported on this system."
+
+It seems to be the cause that the live USB is booted with BIOS mode.
+But I couldn't boot it with UEFI mode, and it turns the screen black and nothing to be displayed when I tried to boot it.
+
+I formatted the USB strage device as GPT, but it never changes.
+
+Next, I formatted the HDD as GPT (before that, the partition table was msdos) and created partitions.
+After that, when I set the flag on the efi partition, efi flag, which didn't appear before formatting as GPT, appeared on the partition.
+However, the situation didn't change.

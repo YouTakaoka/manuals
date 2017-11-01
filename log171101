@@ -15,9 +15,10 @@ and try again. It worked.
 Somehow gentoo doesn't identify HDD!
 
 
-[Installing FreeBSD on Inspiron]
+[Installing FreeBSD on Inspiron (UEFI)]
 - Boot UEFI mode
 I could successfully boot FreeBSD with UEFI mode.
+(neither Gentoo and Arch)
 
 - Create partition
 -- ESP
@@ -28,3 +29,22 @@ Create it by linux.
 2. newfs /dev/...
 3. mount the filesystem on / from GUI.
 
+-- After finishing installation
+OS doesn't boot.
+Need to resister FreeBSD to the UEFI table.
+
+-- Resister FreeBSD to the UEFI table
+  # efibootmgr --create --disk /dev/sda --part 1 --loader \\EFI\\BOOT\\BOOTX64.EFI --label FreeBSD
+  -> EFI variables are not supported on this machene.
+
+1. Boot Ubuntu with UEFI mode from USB strage device
+    <- I tried, but couldn't!!
+    
+[Installing FreeBSD on Inspiron (Legacy)]
+- Create new partition table as msdos
+  I did this by Ubuntu from Live USB.
+
+- Partitioning
+  Choose <Auto> -> <Entire disk>
+  Partition scheme: MBR
+  

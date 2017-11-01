@@ -14,3 +14,17 @@ and try again. It worked.
 - Mount the filesystem
 Somehow gentoo doesn't identify HDD!
 
+
+[Installing FreeBSD on Inspiron]
+- Boot UEFI mode
+I could successfully boot FreeBSD with UEFI mode.
+
+- Create partition
+-- ESP
+Create it by linux.
+
+-- root filesystem
+1. gpart add -t freebsd-ufs ...
+2. newfs /dev/...
+3. mount the filesystem on / from GUI.
+

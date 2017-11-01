@@ -1,0 +1,12 @@
+[Installing Gentoo on Inspiron]
+
+- Coonent to wireless network
+Use iw, wpa_supplicant, wpa_cli
+
+See:
+https://wiki.archlinux.jp/index.php/%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E8%A8%AD%E5%AE%9A#.E6.89.8B.E5.8B.95.E3.82.BB.E3.83.83.E3.83.88.E3.82.A2.E3.83.83.E3.83.97
+https://wiki.archlinux.jp/index.php/WPA_supplicant#wpa_cli_.E3.81.A7.E6.8E.A5.E7.B6.9A.E3.81.99.E3.82.8B
+
+When failed to connect network by wpa_cli, type: 
+  killall wpa_supplicant
+and try again. It worked.

@@ -1,0 +1,7 @@
+[Changing console resolution]
+
+1. Edit /etc/default/grub
+ >GRUB_CMDLINE_LINUX_DEFAULT="quiet splash video=1366x768"
+ >GRUB_CMDLINE_LINUX="video=1366x768"
+
+2. run "grub-update" command.

@@ -1,0 +1,7 @@
+[Couldn't name resolve on Ubuntu on my laptop]
+1. Add following to /etc/network/interfaces:
+   dns-servers 8.8.8.8
+2. Add following to /etc/resolv.conf:
+   nameserver 8.8.8.8
+3. Type following in the command line:
+   sudo service networking restart

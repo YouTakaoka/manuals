@@ -1,0 +1,4 @@
+[Couldn't connect to wireless network on Arch Linux by using Network Manager]
+Edit /etc/dhcpcd.conf and comment out folloing line:
+	require dhcp_server_identifier
+

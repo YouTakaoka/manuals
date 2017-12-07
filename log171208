@@ -1,0 +1,19 @@
+[Switch to KDE from Cinnamon]
+- Install plasma and lxdm
+$ sudo pacman -S plasma lxdm
+
+- Enable dxdm
+$ sudo systemctl enable lxdm
+
+- Make default session KDE
+Edit /etc/lxdm/lxdm.conf:
+  # session=/usr/bin/startlxde
+    -> session=/usr/bin/startkde
+
+- Reboot
+
+[Japanese input on Arch Linux with KDE]
+- Install fcitx-mozc and fcitx-im
+If fcitx-mozc conflicts with mozc, remove mozc and ibus-mozc:
+  # pacman -Rs mozc ibus-mozc
+  # pacman -S fcitx-mozc fcitx-im

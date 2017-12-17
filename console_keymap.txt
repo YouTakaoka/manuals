@@ -3,7 +3,7 @@
 0. cd /usr/share/keymaps/
 1. sudo dumpkeys | sudo tee -a defkeymap.map
 2. sudo cp defkeymap.map mykeymap.map
-3. add following lines to the end of mykeymap.map
+3. Comment out the first line and add following lines to the end of mykeymap.map
 
 # Zenkaku Hankaku -> Esc
 keycode 41 = Escape

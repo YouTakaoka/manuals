@@ -2,6 +2,9 @@
 
 wrd=$1
 for i in $(ls); do
-    echo $i
-    cat $i | grep $wrd
+    hit=$(cat $i | grep $wrd)
+    if [ "$hit" != "" ]; then
+        echo "[$i]"
+        echo $hit
+    fi
 done

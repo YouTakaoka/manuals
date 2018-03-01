@@ -1,0 +1,11 @@
+[Try to boot Arch Linux]
+ Super GRUB2 disk
+-> UEFI option
+-> USB strage device
+-> Detect and show boot methods
+
+Linux -> ng
+Linux(single) -> ng
+Arch Linux -> ng
+Advanced options -> ng
+grub.cfg -> ng

@@ -1,0 +1,4 @@
+[usage of grep]
+grep "foo" ./*
+grep -r "foo" ./* (search recursively)
+

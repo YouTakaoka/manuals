@@ -1,0 +1,5 @@
+[Dump log to console]
+If you want to dump log to another console window, use tty.
+example:
+> echo hogehoge > /dev/tty2
+

@@ -1,0 +1,15 @@
+[JanusをUbuntuにインストールしてデモを動かす]
+1. Janusの依存パッケージと本体をインストール
+ GitHubのReadmeに従えばよし
+ https://github.com/meetecho/janus-gateway/
+
+2. Apacheをインストール
+ $ sudo apt install apache2
+
+3. Janusのデモをドキュメントルートにコピー
+ $ mkdir /var/www/html/janus
+ $ cp <Janus gatewayをダウンロードしたフォルダ>/html/* /var/www/html/janus
+
+4. サーバー上のデモページにアクセス
+ http://localhost/janus/
+

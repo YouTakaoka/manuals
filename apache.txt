@@ -16,4 +16,8 @@ Do not forget to restart httpd:
 [PHP]
 In order to let php work, one may need to install additional module.
 $ sudo apt install libapache2-mod-php
- 
+
+[Virtual host]
+One needs to add the virtual host name to /etc/hosts:
+>127.0.0.1	virtualhost 
+

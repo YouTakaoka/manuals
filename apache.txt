@@ -12,3 +12,8 @@ For example, if you want to limit access,
 
 Do not forget to restart httpd:
    sudo apachectl restart
+
+[PHP]
+In order to let php work, one may need to install additional module.
+$ sudo apt install libapache2-mod-php
+ 

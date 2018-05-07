@@ -38,3 +38,25 @@ In .git/config, add "username@" to the url.
 [git -> Gtk-WARNING cannot open display]
 unset SSH_ASKPASS
 
+################ About branch ################
+[Why use branch?]
+To prevent the confliction of commit.
+Suppose two people, say A and B, are both working with branch master.
+A made a commit in his local repository:
+  C0<-C1.
+And he pushed his commit to the remote branch.
+B also made a commit in his local repository:
+  C0<-C1'.
+But this time, he cannot push his commit to the remote branch.
+Since branch master is a single branch, it cannot split into two branches.
+If you want to do this, you need to have created a new branch from master beforehand.
+Now that they have reached this point, they cannot merge their commits.
+When you have pushed your commit to the remote branch, your local branch must be completely same as the remote one.
+However, now their remote master branch is like 
+  C0<-C1.
+Even if you simply add the commit C1' after this like:
+  C0<-C1<-C1',
+this is not equal to B's local branch.
+This is conflict between commits.
+
+

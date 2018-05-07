@@ -1,0 +1,3 @@
+[use rsync with the remote server]
+If you use rsync with -a option and get "internal server error", take off the -a option.
+It retains owner and permission.

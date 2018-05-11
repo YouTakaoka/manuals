@@ -1,3 +1,6 @@
+If you need to use php on apache2, install:
+libapache2-mod-php5
+
 @self vs. this
 self: reffers static members
 this: reffers current object

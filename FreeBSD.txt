@@ -1,0 +1,7 @@
+[keymap]
+- keymap config file: /usr/share/vt/keymaps/
+- temporaly setting: kbdcontrol -l <keymap file>
+   (Do not do this on tmux.)
+- permanent setting: /etc/rc.conf
+   keymap="<keymap>" (<-note: remove ".kbd" from the file name)
+ 

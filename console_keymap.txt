@@ -21,3 +21,20 @@ keycode 94 = Tab
 4. sudo loadkeys mykeymap.map
 5. add the following to /etc/rc.local
 loadkeys /usr/share/keymaps/mykeymap.map
+
+[unix keymap on ubuntu]
+1. sudo loadkeys us
+2. cd /usr/share/keymaps
+3. sudo dumpkeys | sudo tee -a myunix.kmap
+4. Comment out the first line and add following lines to the end of myunix.kmap
+
+# Tab -> Shift
+keycode 15 = Shift
+# Shift_L   -> Alt
+keycode 42 = Alt
+# Alt       -> Caps Lock
+keycode 56 = Caps_Lock
+
+5. sudo loadkeys /usr/share/keymaps/myunix.kmap
+6. add the following to /etc/rc.local
+loadkeys /usr/share/keymaps/myunix.kmap

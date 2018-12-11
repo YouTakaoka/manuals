@@ -20,7 +20,7 @@ keycode 94 = Tab
 
 4. sudo loadkeys mykeymap.map
 5. add the following to /etc/rc.local
-loadkeys /usr/share/keymaps/mykeymap.map
+sudo loadkeys /usr/share/keymaps/mykeymap.map
 
 [unix keymap on ubuntu]
 1. sudo loadkeys us
@@ -37,4 +37,4 @@ keycode 56 = Caps_Lock
 
 5. sudo loadkeys /usr/share/keymaps/myunix.kmap
 6. add the following to /etc/rc.local
-loadkeys /usr/share/keymaps/myunix.kmap
+sudo loadkeys /usr/share/keymaps/myunix.kmap

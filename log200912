@@ -1,0 +1,5 @@
+[Install rstan on CentOS]
+1. Install libraries required by rstan
+2. Install GCC of the latst version
+3. Create symbolic link to the file `libstdc++.so.6` and add the path to the environment variable `LD-LIBRARY-PATH`
+4. Run `install.packages("rstan")` WITHOUT `dependencies=TRUE` option

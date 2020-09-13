@@ -1,0 +1,9 @@
+[Cannot input Japanese character]
+1. Ctrl+Space to toggle Japanese(Mozc) mode
+2. Left click the region displays character 'A' which is located on the upper-right corner of the entire window
+3. Navigate to 'Input Mode(A)'
+4. Select'Hiragana' changing it from 'Direct Input'
+
+[Change keyboard layout in GUI]
+1. Open 'Region & Language' setting
+2. Add keyboard layouts

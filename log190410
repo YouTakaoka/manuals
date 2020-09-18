@@ -1,0 +1,5 @@
+[npm install freese]
+- sudo npm install
+- append --no-bin-links option
+- npm config set registry http://registry.npmjs.org/
+  npm config set strict-ssl false

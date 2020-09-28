@@ -1,0 +1,17 @@
+[Producing beep sound]
+- Install `beep` command and invoke it.
+- (another way) Invoke `echo $'\a'`.
+
+*On my laptop PC, the methods written above didn't work.
+ Maybe the device doesn't exist or is broken.
+
+[Catching the exit status of the previous command in a shellscript]
+- It's impossible. All the attempts I made ware the waste of time.
+
+[Notice when using `if` syntax to make condition branching by the value of `$?`]
+- The `test` command itself has its own exit status, so it changes the value of `$?` variable when it is used.
+- So, DO NOT USE `$?` directly when using `if` syntax.
+- Make sure to copy the value of `$?` to the another variable, say `$ret`, and use the new variable in the `if` condition branching.
+
+[Made a new program "chime"]
+- I made a new bash shellscript "chime", which is a tool admits some shell commands and produces some sounds depends on the exit staus of the input command.

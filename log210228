@@ -1,0 +1,12 @@
+PHP and JS(Ajax) problem.
+
+- POST data cannot be passed to PHP
+Worked if I replace axios to jQuery somehow.
+
+- Result DOM does not be updated
+Use arrow functions instead of anonimous function in the result processing of Ajax.
+
+- CORS error caused
+Add following code in PHP:
+  header("Access-Control-Allow-Origin: *");
+  header("Access-Control-Allow-Headers: *");

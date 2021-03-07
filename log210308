@@ -1,0 +1,6 @@
+- While implementing image cropping feature using vue-cropperjs, the feature didn't work properly.
+-> Simply rewriting the srcImg variable is not an appropriate way to change the image. Do the following:
+```
+this.$refs.cropper.replace(event.target.result)
+```
+

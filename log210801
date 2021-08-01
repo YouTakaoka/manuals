@@ -1,0 +1,2 @@
+[Use LaTeX in Emacs]
+- If build command dosn't work, launch Emacs from terminal. If you want to use Emacs with GUI, try "\emacs" from the terminal.

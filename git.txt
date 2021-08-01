@@ -59,4 +59,13 @@ Even if you simply add the commit C1' after this like:
 this is not equal to B's local branch.
 This is conflict between commits.
 
+################## Automation of Password Input ################
+Use libsecret. (libgnome-keyring is deprecated)
+See "https://blog.aoirint.com/entry/2020/github_pat_auth/"
+
+```
+sudo apt install libsecret-1-0 libsecret-1-dev
+sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
+git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+```
 

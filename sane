@@ -1,0 +1,24 @@
+[Can't find remote scanner]
+https://help.ubuntu.com/community/SaneDaemonTutorial?action=show&redirect=sane.d+tutorial#Setup_saned_clients
+sudo usermod -a -G lp saned
+
+[Settings]
+- [server]/etc/systemd/system/saned.socket
+  - MaxConnections=3
+- [server]/etc/sane.d/saned.conf
+  - Just write:
+```
+  data_portage = 10000 - 10010
+  192.168.2.0/24
+```
+
+[SANE programs launches too slowly]
+https://wiki.archlinux.jp/index.php/SANE#.E8.B5.B7.E5.8B.95.E3.81.8C.E9.81.85.E3.81.84
+- [server]/etc/sane.d/dll.conf
+  - pixma
+- [client]/etc/sane.d/dll.conf
+  - pixma
+  - net
+
+[Firewall]
+Open port 6566 and 10000-10010

@@ -1,0 +1,20 @@
+[Setting]
+https://www.cups.org/doc/man-cupsd.conf.html
+- [server]/etc/cups/cupsd.conf
+  - # Listen localhost:631
+    -> Port 631
+  - Browsing On
+  - BrowseAddress 192.168.2.*:631
+  - (In each Location directive) Allow @LOCAL
+- sudo systemctl restart cups
+
+[Autodetection of printers]
+https://wiki.archlinux.jp/index.php/CUPS/%E3%83%97%E3%83%AA%E3%83%B3%E3%82%BF%E3%83%BC%E5%85%B1%E6%9C%89
+https://wiki.archlinux.jp/index.php/CUPS#cups-browsed
+- install on server:
+  - Avahi
+  - Samba (for Windows)
+
+[Driver for remote printer]
+- Server: Use a maker driver
+- Client: Use "IPP Everywhere" driver (Do not choose maker one)

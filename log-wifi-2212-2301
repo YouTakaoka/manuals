@@ -1,0 +1,62 @@
+[ThinkPad L530 doesn't recognize WiFi card]
+- WiFi doesn't connect (even from Windows).
+- WiFi interface doesn't appear in the output of:
+  - ip
+  - networkctl
+  - iwconfig
+  - rfkill
+  - lspci
+  - lshw 
+- [Solved] Replaced the WiFi card by new one.
+  - [OK] Intel Centrino Advanced-N + WiMax 6520 worked.
+  - [NG] Intel Centrino Advanced-N 6230 rejected by BIOS (PC didn't even start!).
+
+[New WiFi card doesn't admit the driver (iwlwifi)]
+- WiFi still doesn't connect from Ubuntu (Windows is OK).
+- WiFi interface does appear in the output of:
+  - lspci
+  - lshw
+- However, was not in the output of:
+  - ip
+  - networkctl
+  - iwconfig
+  - rfkill
+- At the first time I installed the new WiFi card, the WiFi device shows `Kernel modules: wl` in the output of the `lspci -k` command.
+- Then, I set an alias for the device in `/etc/modprobe.d/iwlwifi.conf`:
+  - alias pci:v00008086d00000089sv*sd*bc*sc*i* iwlwifi
+- Then the output changed to `Kernel modules: iwlwifi`, but found no line of `Kernel driver in use: hogehoge`.
+- I also attempted `/bin/echo "8086 0089" > /sys/bus/pci/drivers/iwlwifi/new_id`, but it didn't work (said `Invalid argument`).
+- Neither `/bin/echo $DEVICE_ID > /sys/bus/pci/drivers/iwlwifi/bind`.
+- I couldn't find any error messages or hints in the output of `dmesg` and `journalctl` command.
+- I tried some versions of iwlwifi:
+  - Kernel specific
+  - Backport
+- they did't help though.
+- I tried loading additional module `iwlmvm`, but made no any change.
+- Also tried adding some firmware binaries into `/lib/firmware`, made no change.
+
+- To debug iwlwifi, I needed to modify the kernel config. So I decided to build the linux kernel from source.
+
+[Building the kernel]
+- I followed the instructions of some sites:
+  - https://qiita.com/kakinaguru_zo/items/0a01e081be1e7b08dea1
+  - https://gihyo.jp/admin/serial/01/ubuntu-recipe/0526
+- I set `CONFIG_IWLWIFI_DEBUG=y` in the `.config` file, then executed building.
+- Surprisingly, the line `Kernel driver in use: iwlwifi` appeared in the output of `lspci -k` after rebooting PC!
+
+[Still the WiFi isn't recognized...]
+- The WiFi interface still doen't appear in the output of the commands above.
+- In the output of `dmesg` command, I found the line says:
+  - `kernel: iwlwifi 0000:06:00.0: loaded firmware version 41.28.5.1 build 33926 6050-5.ucode op_mode iwldvm`
+- [Solved] So I tried:
+  - `sudo modprobe -r iwlmvm`
+  - `sudo modprobe iwldvm`
+- then it WORKED!!! Finally connected WiFi, yeah!
+- To make permanent the state, I needed to add the line `iwldvm` to the file `/etc/modules-load.d/modules.conf`.
+
+[Summary]
+- To make WiFi connected, I did:
+  - Replace the WiFi card
+  - Attach alias `iwlwifi` to the device ID
+  - Rebuild the Linux kernel (but why?)
+  - Load the module `iwldvm` (WITHOUT `iwlmvm`! With it, the driver doesn't work).
